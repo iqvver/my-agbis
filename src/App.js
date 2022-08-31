@@ -1,13 +1,19 @@
+import Basket from './components/basket/Basket';
 import Header from './components/header/Header';
 import ServicePageContainer from './views/servicePage/ServicePageContainer';
 
 function App() {
   return (
     <div className="App">
-      <header>
-    <Header />
-      </header>
-      <ServicePageContainer />
+      <body>
+        <header>
+          <Header />
+        </header>
+        <main>
+          <ServicePageContainer />
+          <Basket />
+        </main>
+      </body>
     </div>
   );
 }

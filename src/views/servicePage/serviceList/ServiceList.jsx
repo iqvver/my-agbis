@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const ServiceList = () => {
   const tree = document.getElementsByClassName("service-list");
@@ -33,8 +34,12 @@ const ServiceList = () => {
           Химчистка
           <ul className="list-item">
             <li>Аксесуары</li>
-            <li>Верхняя одежда</li>
-            <li>Деловой костюм</li>
+            <NavLink to={"/dryouterwear"}>
+              <li>Верхняя одежда</li>
+            </NavLink>
+            <NavLink to={"/drysuit"}>
+              <li>Деловой костюм</li>
+            </NavLink>
             <li>Джинса</li>
             <li>Куртка и пуховик</li>
             <li>Пальто и плащ</li>
@@ -44,15 +49,19 @@ const ServiceList = () => {
           Аквачистка
           <ul className="list-item">
             <li>Аксесуары</li>
-            <li>Верхняя одежда</li>
-            <li>Деловой костюм</li>
+            <NavLink to={"/aqaouterwear"}>
+              <li>Верхняя одежда</li>
+            </NavLink>
+            <NavLink to={"/aqasuit"}>
+              <li>Деловой костюм</li>
+            </NavLink>
             <li>Джинса</li>
             <li>Куртка и пуховик</li>
             <li>Пальто и плащ</li>
           </ul>
         </li>
         <li className="list-menu">
-          Ремонт одежды
+          <NavLink to={"/repair"}> Ремонт одежды </NavLink>
           <ul className="list-item">
             <li>Аксесуары</li>
             <li>Верхняя одежда</li>

@@ -11,11 +11,18 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
   
 @import '../components/header/Header';
 @import '../components/social/Social';
 @import '../components/dropDawn/dropLang';
 @import '../components/hamburger/Hamburger';
 @import '../components/search/search';
+@import '../components/list/list';
+@import '../components/basket/basket';
 @import '../views/servicePage/servicePageContainer';
 

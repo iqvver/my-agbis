@@ -29,6 +29,7 @@
         cursor: pointer;
         list-style-type: none;
         margin: 12px 0;
+        width: 100%;
 
         :hover {
             background-size: 60% 2px;
@@ -38,8 +39,15 @@
 
 .hide::before {
     content: '\005E ';
+    margin-right: 12px;
 }
 
 .show::before {
     content: '\02C5 ';
+    margin-right: 12px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
 }
