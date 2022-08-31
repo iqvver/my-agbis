@@ -1,0 +1,46 @@
+.header {
+    height: 56px;
+    padding: 0 48px 0 52px;
+    background-color: #1D252E;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__contacts {
+        display: flex;
+    }
+
+    &__phone {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 26px;
+
+        a {
+            text-decoration: none !important;
+            color: #FFFFFF;
+        }
+    }
+
+    &__phone::after {
+        content: " ";
+        background: #FFFFFF;
+        width: 1px;
+        height: 15px;
+        margin-left: 10px;
+    }
+
+    &__language {
+        color: #FFFFFF;
+    }
+}
+
+.sub-header {
+    height: 74px;
+    padding: 0 50px 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}

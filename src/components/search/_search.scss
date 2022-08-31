@@ -1,0 +1,64 @@
+.search {
+    &_header {
+        input {
+            background: url("../assets/Icons/linsa.png") 30px no-repeat;
+            text-align: center;
+            width: 195px;
+            height: 36px;
+            border-radius: 42px;
+            border: 1px solid #CD9933;
+            outline: none;
+            position: relative;
+            transition: .3s linear;
+        }
+
+        &:focus {
+            width: 300px;
+        }
+
+        &:hover {
+            color: rgb(194, 21, 21);
+            border-radius: 42px;
+            background-color: #CD9933;
+
+            ::placeholder {
+                color: #ffffff;
+            }
+        }
+
+        &::placeholder {
+            color: #000000;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    &_service {
+        input {
+            background: url("../assets/Icons/linsa.png") no-repeat;
+            background-position: right 10px top 50%;
+            width: 263px;
+            height: 28px;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 18px;
+            outline: none;
+            border: 0;
+            border-bottom: 1px solid #2A3B45;
+
+            &::placeholder {
+                color: #1D252E;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 18px;
+                opacity: 0.4;
+            }
+
+            &:focus {
+                background: url("../assets/Icons/del.png") no-repeat;
+                background-position: right 10px top 50%;
+            }
+        }
+    }
+}
