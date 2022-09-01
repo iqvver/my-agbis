@@ -8,6 +8,20 @@ let initialState = {
             id: 0,
             category: 'Химчистка',
             name: 'Пальто',
+            sum: 400, 
+            count: 1
+        },
+        {
+            id: 1,
+            category: 'Химчистка',
+            name: 'Пальтоvffds',
+            sum: 1400, 
+            count: 1
+        },
+        {
+            id: 2,
+            category: 'Химчистка',
+            name: 'Пальтоvffds',
             sum: 1400, 
             count: 1
         }
@@ -18,25 +32,25 @@ let initialState = {
             id: 0,
             category: 'Химчистка',
             name: 'Пальто, полупальто с подстежкой из натурального меха',
-            price: 1400, count: 2
+            price: 1400
         },
         {
             id: 1,
             category: 'Химчистка',
             name: 'Ветровка',
-            price: 520, count: 1
+            price: 520
         },
         {
             id: 2,
             category: 'Химчистка',
             name: 'Ветровка (натуральный шелк)',
-            price: 3000, count: 1
+            price: 3000
         },
         {
             id: 3,
             category: 'Химчистка',
             name: 'Пальто, полупальто с подстежкой из натурального меха',
-            price: 11000, count: 1
+            price: 11000
         },
     ],
 

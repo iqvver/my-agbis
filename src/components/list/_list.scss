@@ -21,7 +21,9 @@
     }
 
     &__price {
-        margin-right: 40px;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 10px;
         font-style: normal;
         font-weight: 700;
         font-size: 18px;
@@ -46,5 +48,27 @@
         font-weight: 300;
         font-size: 14px;
         line-height: 18px;
+        cursor: pointer;
+    }
+
+    &__field {
+        display: flex;
+        width: 50%;
+        border: none;
+
+        &::placeholder {
+            color: #000;
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        &_prise {
+            text-align: right;
+
+            &::placeholder {
+                font-style: normal;
+                font-weight: 700;
+            }
+        }
     }
 }

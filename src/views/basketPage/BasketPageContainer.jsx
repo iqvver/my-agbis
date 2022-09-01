@@ -9,7 +9,6 @@ let mapStateToProps = (state) => {
 };
 
 const BasketPageContainer = (props) => {
-  debugger;
   return (
     <div>
       <Basket basket={props.basket} />

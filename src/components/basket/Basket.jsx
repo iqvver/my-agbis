@@ -4,7 +4,7 @@ import basketBtn from "../../assets/Icons/basketBtn.png";
 
 const Basket = ({ basket }) => {
   const [activeBasket, setActive] = useState(false);
-  const [count, setCount] = useState(0);
+  const total = basket.reduce((a, b) => a + b.count, 0);
   if (!activeBasket) {
     return (
       <div className="basket">
@@ -16,11 +16,11 @@ const Basket = ({ basket }) => {
         </div>
         <div className="basket__count">
           <text>Количество услуг в корзине</text>
-          <num>{basket.length}</num>
+          <num>{total}</num>
         </div>
         <div className="basket__sum">
           <text> Сумма заказа </text>
-          <num>{basket[0].sum}</num>
+          <num>1100</num>
         </div>
       </div>
     );
@@ -35,40 +35,45 @@ const Basket = ({ basket }) => {
         </div>
         <div className="basket__count">
           <text>Количество услуг в корзине</text>
-          <num>{basket.length}</num>
+          <num>{total}</num>
         </div>
         <div className="basket__sum">
           <text> Сумма заказа </text>
-          <num>{basket[0].sum}</num>
+          <num>1000</num>
         </div>
-        <div className="basket__wrapper">
-          <div className="basket__category">Химчистка</div>
-
-          <Divider />
-          <div className="basket__descr">
-            <div className="basket__product">
-              Пальто, полупальто с подстежкой из натурального меха
-            </div>
-            <div className="basket__product-count">
-              <num>1 400₽</num>
-              <div className="basket__button-block">
-                <button className="button_nobb" onClick={() => setCount(count + 1)}>+</button>
-                <num>{count}</num>
-                <button className="button_nobb" onClick={() => setCount(count - 1)}>-</button>
-              </div>
-            </div>
-          </div>
-          <Divider />
-          <div className="basket__category">Аквачистка</div>
-          <div className="basket__descr">
-            Пальто, полупальто с подстежкой из натурального меха
-          </div>
-          <Divider />
-          <button className="button button_center">Оформить заказ</button>
-        </div>
+        {basket.map((basket) => (
+          <BasketContent basket={basket} />
+        ))}
+        <button className="button button_center">Оформить заказ</button>
       </div>
     );
   }
+};
+
+const BasketContent = ({ basket }) => {
+  const [count, setCount] = useState(0);
+  return (
+    <div className="basket__wrapper">
+      <div className="basket__category">{basket.category}</div>
+      <Divider />
+      <div className="basket__descr">
+        <div className="basket__product">{basket.name}</div>
+        <div className="basket__product-count">
+          <num>{basket.sum}</num>
+          <div className="basket__button-block">
+            <button className="button_nobb" onClick={() => setCount(count + 1)}>
+              +
+            </button>
+            <num>{count}</num>
+            <button className="button_nobb" onClick={() => setCount(count - 1)}>
+              -
+            </button>
+          </div>
+        </div>
+      </div>
+      <Divider />
+    </div>
+  );
 };
 
 export default Basket;

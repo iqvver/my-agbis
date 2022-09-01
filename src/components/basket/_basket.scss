@@ -82,8 +82,12 @@
         justify-content: space-between;
     }
 
+    &__product {
+        width: 75%;
+    }
     &__product-count {
-        width: 100px;
+        text-align: center;
+        width: 20%;
     }
 
     &__button-block {
