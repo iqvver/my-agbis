@@ -1,11 +1,7 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import DryOuterwear from "./serviceContent/serviceDry/DryOuterwear";
-import DrySuit from "./serviceContent/serviceDry/DrySuit";
-import ServiceDry from "./serviceContent/serviceDry/ServiceDry";
-import AqaOuterwear from "./serviceContent/serviseAqa/AqaOuterwear";
-import AqaSuit from "./serviceContent/serviseAqa/AqaSuit";
-import ServiceAqa from "./serviceContent/serviseAqa/ServiceAqa";
+import { Routes, Route } from "react-router-dom";
+import DrySuitContainer from "./serviceContent/serviceDry/DrySuitContainer";
+import AqaSuitContainer from "./serviceContent/serviseAqa/AqaSuitContainer";
 import ServiceInfo from "./serviceInfo/ServiceInfo";
 import ServiceList from "./serviceList/ServiceList";
 
@@ -19,10 +15,10 @@ const ServicePageContainer = () => {
         </div>
         <div className="service-wrapper__content">
           <Routes>
-            <Route index path="drysuit" element={<DrySuit />} />
-            <Route path="dryouterwear" element={<DryOuterwear />} />
-            <Route path="aqasuit" element={<AqaSuit />} />
-            <Route path="aqaouterwear" element={<AqaOuterwear />} />
+            <Route index path="drysuit" element={<DrySuitContainer />} />
+            <Route path="dryouterwear" element={<DrySuitContainer />} />
+            <Route path="aqasuit" element={<AqaSuitContainer />} />
+            <Route path="aqaouterwear" element={<AqaSuitContainer />} />
           </Routes>
         </div>
       </div>
