@@ -1,5 +1,6 @@
-import Basket from './components/basket/Basket';
+import React from 'react';
 import Header from './components/header/Header';
+import BasketPageContainer from './views/basketPage/BasketPageContainer';
 import ServicePageContainer from './views/servicePage/ServicePageContainer';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
         </header>
         <main>
           <ServicePageContainer />
-          <Basket />
+          <BasketPageContainer />
         </main>
       </body>
     </div>

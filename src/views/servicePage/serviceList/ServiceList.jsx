@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const ServiceList = () => {
   const tree = document.getElementsByClassName("service-list");
@@ -11,7 +11,7 @@ const ServiceList = () => {
 
   //  ловим клики на всём дереве
   let handleCall = (event) => {
-    if (event.target.tagName != "SPAN") {
+    if (event.target.tagName !== "SPAN") {
     }
     let childrenContainer = event.target.querySelector("ul");
     if (!childrenContainer) return; // нет детей
@@ -61,7 +61,7 @@ const ServiceList = () => {
           </ul>
         </li>
         <li className="list-menu">
-          <NavLink to={"/repair"}> Ремонт одежды </NavLink>
+          Ремонт одежды
           <ul className="list-item">
             <li>Аксесуары</li>
             <li>Верхняя одежда</li>

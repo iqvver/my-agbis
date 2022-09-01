@@ -12,6 +12,10 @@
     border-radius: 20px 0px 0px 0px;
     z-index: 10;
 
+    &_active {
+        height: 100%;
+    }
+
     &__title {
         display: flex;
         margin: 28px 0 0 85px;
@@ -27,6 +31,12 @@
         justify-content: flex-end;
         margin-top: -45px;
         margin-right: 10px;
+
+        &_active {
+            justify-content: flex-start;
+            margin-top: -45px;
+            transform: rotate(180deg);
+        }
     }
 
     &__count {
@@ -51,5 +61,35 @@
         font-weight: 700;
         font-size: 18px;
         line-height: 22px;
+    }
+
+    &__wrapper {
+        padding: 0 85px 10px 85px;
+    }
+
+    &__category {
+        margin-top: 44px;
+        margin-bottom: 12px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: #0084CA;
+    }
+
+    &__descr {
+        margin: 26px 0 19px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__product-count {
+        width: 100px;
+    }
+
+    &__button-block {
+        border: 1px solid #0084CA;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
     }
 }

@@ -15,10 +15,10 @@ const ServicePageContainer = () => {
         </div>
         <div className="service-wrapper__content">
           <Routes>
-            <Route index path="drysuit" element={<DrySuitContainer />} />
-            <Route path="dryouterwear" element={<DrySuitContainer />} />
-            <Route path="aqasuit" element={<AqaSuitContainer />} />
-            <Route path="aqaouterwear" element={<AqaSuitContainer />} />
+            <Route index path="/drysuit" element={<DrySuitContainer />} />
+            <Route path="/dryouterwear" element={<DrySuitContainer />} />
+            <Route path="/aqasuit" element={<AqaSuitContainer />} />
+            <Route path="/aqaouterwear" element={<AqaSuitContainer />} />
           </Routes>
         </div>
       </div>

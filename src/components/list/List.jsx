@@ -9,7 +9,7 @@ const List = ({ services }) => {
       <div className="list__content">
         <div className="list__price">{services.price}</div>
         <div className="list__basket">
-          <button>
+          <button className="button_nobb">
             <img src={basket} alt="basket" />
           </button>
         </div>

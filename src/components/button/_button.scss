@@ -1,0 +1,23 @@
+.button {
+    width: 224px;
+    height: 60px;
+    background: #0084CA;
+    border: 1px solid #FFFFFF;
+    border-radius: 40px;
+    color: #FFFFFF;
+    cursor: pointer;
+
+    &_center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 60px auto;
+    }
+
+    &_nobb {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #0084CA;
+    }
+}
