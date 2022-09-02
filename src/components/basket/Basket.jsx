@@ -4,7 +4,8 @@ import basketBtn from "../../assets/Icons/basketBtn.png";
 
 const Basket = ({ basket }) => {
   const [activeBasket, setActive] = useState(false);
-  const total = basket.reduce((a, b) => a + b.count, 0);
+  const totalCount = basket.reduce((a, b) => a + b.count, 0);
+  const totalPrice = basket.reduce((a, b) => a + b.sum, 0);
   if (!activeBasket) {
     return (
       <div className="basket">
@@ -16,11 +17,11 @@ const Basket = ({ basket }) => {
         </div>
         <div className="basket__count">
           <text>Количество услуг в корзине</text>
-          <num>{total}</num>
+          <num>{totalCount}</num>
         </div>
         <div className="basket__sum">
           <text> Сумма заказа </text>
-          <num>1100</num>
+          <num>{totalPrice}</num>
         </div>
       </div>
     );
@@ -35,11 +36,11 @@ const Basket = ({ basket }) => {
         </div>
         <div className="basket__count">
           <text>Количество услуг в корзине</text>
-          <num>{total}</num>
+          <num>{totalCount}</num>
         </div>
         <div className="basket__sum">
           <text> Сумма заказа </text>
-          <num>1000</num>
+          <num>{totalPrice}</num>
         </div>
         {basket.map((basket) => (
           <BasketContent basket={basket} />
@@ -51,7 +52,8 @@ const Basket = ({ basket }) => {
 };
 
 const BasketContent = ({ basket }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(basket.count);
+  let totalSum = basket.sum * count;
   return (
     <div className="basket__wrapper">
       <div className="basket__category">{basket.category}</div>
@@ -59,7 +61,7 @@ const BasketContent = ({ basket }) => {
       <div className="basket__descr">
         <div className="basket__product">{basket.name}</div>
         <div className="basket__product-count">
-          <num>{basket.sum}</num>
+          <num>{totalSum}</num>
           <div className="basket__button-block">
             <button className="button_nobb" onClick={() => setCount(count + 1)}>
               +

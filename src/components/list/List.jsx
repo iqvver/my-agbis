@@ -1,18 +1,21 @@
 import React from "react";
-import { Field, reduxForm } from "redux-form";
+import { reduxForm } from "redux-form";
 import right from "../../assets/Icons/right.png";
 import basket from "../../assets/Icons/basket.png";
 
-const List = ({ services, addService }) => {
-  let addNewService = (values) => {
-    debugger;
-    addService(values.newName, values.newPrice);
+const List = ({ services, addService, id }) => {
+  let addNewService = () => {
+    addService(id);
   };
 
   return (
     <div className="list">
-      <div>
-        <AddUserFormRedux onSubmit={addNewService} services={services} />
+      <div className="list__title">{services.name}</div>
+      <div className="list__content">
+        <div className="list__price">{services.price}</div>
+        <div className="list__basket">
+          <AddFormRedux onSubmit={addNewService} services={services} />
+        </div>
       </div>
       <div className="list__details">
         Подробнее <img src={right} alt="right" />
@@ -22,45 +25,20 @@ const List = ({ services, addService }) => {
 };
 
 // форма регистрации (отправки введеных данных в массив)
-const MyUser = ({ handleSubmit, services }) => {
+const MyServices = ({ handleSubmit, services, handleCall }) => {
   return (
     <form onSubmit={handleSubmit}>
-      <div className="list__title">
-        <Field
-          className="list__field"
-          name="newName"
-          component="input"
-          type="text"
-          placeholder={services.name}
-          values={services.name}
-          disabled
-        />
-      </div>
-      <div className="list__content">
-        <div className="list__price">
-          <Field
-            className="list__field list__field_prise"
-            name="newPrice"
-            type="number"
-            component="input"
-            placeholder={services.price}
-            values={services.price}
-            disabled
-          />{" "}
-          Руб
-        </div>
-        <div className="list__basket">
-          <button className="button_nobb" type="submit">
-            <img src={basket} alt="basket" />
-          </button>
-        </div>
+      <div className="list__basket">
+        <button className="button_nobb" type="submit">
+          <img src={basket} alt="basket" onClick={handleCall} />
+        </button>
       </div>
     </form>
   );
 };
 
-const AddUserFormRedux = reduxForm({
+const AddFormRedux = reduxForm({
   form: "userForm",
-})(MyUser);
+})(MyServices);
 
 export default List;

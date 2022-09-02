@@ -13,7 +13,7 @@
     z-index: 10;
 
     &_active {
-        height: 100%;
+        min-height: 100vh;
     }
 
     &__title {
