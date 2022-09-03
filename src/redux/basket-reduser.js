@@ -117,8 +117,9 @@ const basketReducer = (state = initialState, action) => {
             let iId = action.id;
             let iCategory = 'Аквачистка';
             let iName = state.aqaServices[iId].name;
-            let iSum = state.aqaServices[iId].price;
+            let iPrice = state.aqaServices[iId].price;
             let iCount = 1;
+            let iTotalSum = iPrice * iCount;
 
             return {
                 ...state,
@@ -126,8 +127,9 @@ const basketReducer = (state = initialState, action) => {
                 {
                     category: iCategory,
                     name: iName,
-                    sum: iSum,
+                    price: iPrice,
                     count: iCount,
+                    totalSum: iTotalSum
                 }]
             };
         }

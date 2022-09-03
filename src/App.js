@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/header/Header';
-import BasketPageContainer from './views/basketPage/BasketPageContainer';
-import ServicePageContainer from './views/servicePage/ServicePageContainer';
+import BasketPageContainer from './views/basketView/BasketPageContainer';
+import ServicePageContainer from './views/serviceView/ServicePageContainer';
 
 function App() {
   return (
