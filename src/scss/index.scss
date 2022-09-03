@@ -1,23 +1,28 @@
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  button {
-    cursor: pointer;
-    background: none;
-    border: none;
-  }
-  
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+@import './app';
 @import '../components/header/Header';
 @import '../components/social/Social';
 @import '../components/dropDawn/dropLang';
@@ -28,4 +33,3 @@ body {
 @import '../components/divider/divider';
 @import '../components/button/button';
 @import '../views/servicePage/servicePageContainer';
-

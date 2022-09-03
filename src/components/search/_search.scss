@@ -1,7 +1,7 @@
 .search {
     &_header {
         input {
-            background: url("../assets/Icons/linsa.png") 30px no-repeat;
+            background: url("../assets/icons/linsa.png") 30px no-repeat;
             text-align: center;
             width: 195px;
             height: 36px;
@@ -36,7 +36,7 @@
 
     &_service {
         input {
-            background: url("../assets/Icons/linsa.png") no-repeat;
+            background: url("../assets/icons/linsa.png") no-repeat;
             background-position: right 10px top 50%;
             width: 263px;
             height: 28px;
@@ -56,7 +56,7 @@
             }
 
             &:focus {
-                background: url("../assets/Icons/del.png") no-repeat;
+                background: url("../assets/icons/del.png") no-repeat;
                 background-position: right 10px top 50%;
             }
         }

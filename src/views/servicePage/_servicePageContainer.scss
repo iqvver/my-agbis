@@ -1,3 +1,16 @@
+.service-wrapper {
+    padding: 66px 150px 5px 150px;
+    display: flex;
+
+    &__list {
+        width: 20%;
+    }
+
+    &__content {
+        width: 80%;
+    }
+}
+
 @import './serviceInfo/serviceInfo';
 @import './serviceWrapper';
 @import './serviceList/serviceList';

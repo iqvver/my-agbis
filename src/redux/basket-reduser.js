@@ -9,8 +9,9 @@ let initialState = {
             id: 0,
             category: 'Химчистка',
             name: 'Пальто',
-            sum: 400, 
-            count: 1
+            price: 400,
+            count: 1,
+            totalSum: 400
         },
         /*
         { 
@@ -94,8 +95,9 @@ const basketReducer = (state = initialState, action) => {
             let iId = action.id;
             let iCategory = 'Химчистка';
             let iName = state.dryServices[iId].name;
-            let iSum = state.dryServices[iId].price;
+            let iPrice = state.dryServices[iId].price;
             let iCount = 1;
+            let iTotalSum = iPrice * iCount;
 
             return {
                 ...state,
@@ -103,8 +105,9 @@ const basketReducer = (state = initialState, action) => {
                 {
                     category: iCategory,
                     name: iName,
-                    sum: iSum,
+                    price: iPrice,
                     count: iCount,
+                    totalSum: iTotalSum
                 }]
             };
         }
@@ -135,7 +138,7 @@ const basketReducer = (state = initialState, action) => {
 }
 
 // экшен для добавления услуги в карзину
-export const newServicesAC = (id) => ({ type: ADD_DRY_SERVICES, id })
+export const newServicesAC = (id, count) => ({ type: ADD_DRY_SERVICES, id, count })
 export const newAqaServicesAC = (id) => ({ type: ADD_AQA_SERVICES, id })
 
 export default basketReducer;

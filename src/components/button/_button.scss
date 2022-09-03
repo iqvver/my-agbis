@@ -1,11 +1,15 @@
 .button {
-    width: 224px;
-    height: 60px;
+    min-width: 224px;
+    min-height: 60px;
     background: #0084CA;
     border: 1px solid #FFFFFF;
     border-radius: 40px;
     color: #FFFFFF;
-    cursor: pointer;
+
+    &:hover {
+
+        background-color: #016DA6;
+    }
 
     &_center {
         display: flex;

@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import Divider from "../divider/Divider";
-import basketBtn from "../../assets/Icons/basketBtn.png";
+import basketBtn from "../../assets/icons/basketBtn.png";
 
 const Basket = ({ basket }) => {
   const [activeBasket, setActive] = useState(false);
   const totalCount = basket.reduce((a, b) => a + b.count, 0);
-  const totalPrice = basket.reduce((a, b) => a + b.sum, 0);
+  const totalPrice = basket.reduce((a, b) => a + b.price, 0);
+
+  const myBasket = [...basket].map((basket) => (
+    <BasketContent basket={basket} />
+  ));
+
   if (!activeBasket) {
     return (
       <div className="basket">
@@ -42,9 +47,7 @@ const Basket = ({ basket }) => {
           <text> Сумма заказа </text>
           <num>{totalPrice}</num>
         </div>
-        {basket.map((basket) => (
-          <BasketContent basket={basket} />
-        ))}
+        {myBasket}
         <button className="button button_center">Оформить заказ</button>
       </div>
     );
@@ -53,7 +56,15 @@ const Basket = ({ basket }) => {
 
 const BasketContent = ({ basket }) => {
   const [count, setCount] = useState(basket.count);
-  let totalSum = basket.sum * count;
+  let addIncriment = () => {
+    setCount((basket.count += 1));
+    console.log(basket.count);
+    console.log(basket.totalSum);
+  };
+  let addDecriment = () => {
+    setCount((basket.count -= 1));
+    console.log(basket.count);
+  };
   return (
     <div className="basket__wrapper">
       <div className="basket__category">{basket.category}</div>
@@ -61,13 +72,13 @@ const BasketContent = ({ basket }) => {
       <div className="basket__descr">
         <div className="basket__product">{basket.name}</div>
         <div className="basket__product-count">
-          <num>{totalSum}</num>
+          <num>{basket.price * basket.count}</num>
           <div className="basket__button-block">
-            <button className="button_nobb" onClick={() => setCount(count + 1)}>
+            <button className="button_nobb" onClick={addIncriment}>
               +
             </button>
-            <num>{count}</num>
-            <button className="button_nobb" onClick={() => setCount(count - 1)}>
+            <num>{basket.count}</num>
+            <button className="button_nobb" onClick={addDecriment}>
               -
             </button>
           </div>

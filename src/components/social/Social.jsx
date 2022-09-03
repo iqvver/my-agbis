@@ -1,8 +1,8 @@
 import React from "react";
-import insta from "../../assets/Icons/insta.png";
-import fb from "../../assets/Icons/fb.png";
-import whatsapp from "../../assets/Icons/whatsapp.png";
-import viber from "../../assets/Icons/viber.png";
+import insta from "../../assets/icons/insta.png";
+import fb from "../../assets/icons/fb.png";
+import whatsapp from "../../assets/icons/whatsapp.png";
+import viber from "../../assets/icons/viber.png";
 
 const Social = () => {
   return (

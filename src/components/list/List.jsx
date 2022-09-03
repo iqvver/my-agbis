@@ -1,7 +1,7 @@
 import React from "react";
 import { reduxForm } from "redux-form";
-import right from "../../assets/Icons/right.png";
-import basket from "../../assets/Icons/basket.png";
+import right from "../../assets/icons/right.png";
+import basket from "../../assets/icons/basket.png";
 
 const List = ({ services, addService, id }) => {
   let addNewService = () => {
@@ -25,7 +25,7 @@ const List = ({ services, addService, id }) => {
 };
 
 // форма регистрации (отправки введеных данных в массив)
-const MyServices = ({ handleSubmit, services, handleCall }) => {
+const MyServices = ({ handleSubmit, handleCall }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="list__basket">
