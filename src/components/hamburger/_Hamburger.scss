@@ -9,6 +9,7 @@
 .hamburger {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     
     div {
         position: relative;

@@ -1,6 +1,6 @@
 .header {
     height: 56px;
-    padding: 0 48px 0 52px;
+    padding: 0 38px 0 52px;
     background-color: #1D252E;
     display: flex;
     align-items: center;
@@ -32,7 +32,11 @@
     }
 
     &__language {
+        display: block;
+        text-align: center;
+        width: 60px;
         color: #FFFFFF;
+        cursor: pointer;
     }
 }
 

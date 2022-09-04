@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Divider from "../divider/Divider";
 import basketBtn from "../../assets/icons/basketBtn.png";
 
@@ -6,52 +6,51 @@ const Basket = ({ basket }) => {
   const [activeBasket, setActive] = useState(false);
   const totalCount = basket.reduce((a, b) => a + b.count, 0);
   const totalPrice = basket.reduce((a, b) => a + b.price, 0);
-
   const myBasket = [...basket].map((basket) => (
     <BasketContent basket={basket} />
   ));
 
-  if (!activeBasket) {
-    return (
-      <div className="basket">
-        <div className="basket__title">Корзина</div>
-        <div className="basket__btn">
-          <button className="button_nobb" onClick={() => setActive(true)}>
-            <img src={basketBtn} alt="basketBtn" />
-          </button>
+  return (
+    <>
+      {!activeBasket ? (
+        <div className="basket">
+          <div className="basket__title">Корзина</div>
+          <div className="basket__btn">
+            <button className="button_nobb" onClick={() => setActive(true)}>
+              <img src={basketBtn} alt="basketBtn" />
+            </button>
+          </div>
+          <div className="basket__count">
+            <text>Количество услуг в корзине</text>
+            <num>{totalCount}</num>
+          </div>
+          <div className="basket__sum">
+            <text> Сумма заказа </text>
+            <num>{totalPrice}</num>
+          </div>
         </div>
-        <div className="basket__count">
-          <text>Количество услуг в корзине</text>
-          <num>{totalCount}</num>
+      ) : (
+        <div className="basket basket_active">
+          <div className="basket__title">Корзина</div>
+          <div className="basket__btn_active">
+            <button className="button_nobb" onClick={() => setActive(false)}>
+              <img src={basketBtn} alt="basketBtn" />
+            </button>
+          </div>
+          <div className="basket__count">
+            <text>Количество услуг в корзине</text>
+            <num>{totalCount}</num>
+          </div>
+          <div className="basket__sum">
+            <text> Сумма заказа </text>
+            <num>{totalPrice}</num>
+          </div>
+          {myBasket}
+          <button className="button button_center">Оформить заказ</button>
         </div>
-        <div className="basket__sum">
-          <text> Сумма заказа </text>
-          <num>{totalPrice}</num>
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <div className="basket basket_active">
-        <div className="basket__title">Корзина</div>
-        <div className="basket__btn_active">
-          <button className="button_nobb" onClick={() => setActive(false)}>
-            <img src={basketBtn} alt="basketBtn" />
-          </button>
-        </div>
-        <div className="basket__count">
-          <text>Количество услуг в корзине</text>
-          <num>{totalCount}</num>
-        </div>
-        <div className="basket__sum">
-          <text> Сумма заказа </text>
-          <num>{totalPrice}</num>
-        </div>
-        {myBasket}
-        <button className="button button_center">Оформить заказ</button>
-      </div>
-    );
-  }
+      )}
+    </>
+  );
 };
 
 const BasketContent = ({ basket }) => {

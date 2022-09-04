@@ -22,7 +22,6 @@ button {
   border: none;
 }
 
-@import './app';
 @import '../components/header/Header';
 @import '../components/social/Social';
 @import '../components/dropDawn/dropLang';
@@ -32,4 +31,4 @@ button {
 @import '../components/basket/basket';
 @import '../components/divider/divider';
 @import '../components/button/button';
-@import '../views/servicePage/servicePageContainer';
+@import '../views/serviceView/servicePageContainer';

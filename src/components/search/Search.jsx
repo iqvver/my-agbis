@@ -4,7 +4,7 @@ const Search = ( { placeholder } ) => {
   return (
     <>
       <form>
-        <input type="text" placeholder={placeholder} />
+        <input type="text" minlength="5" maxlength="20" placeholder={placeholder} />
       </form>
     </>
   );
