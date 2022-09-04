@@ -4,10 +4,10 @@ const Hamburger = () => {
   return (
     <div>
       <input id="toggle" type="checkbox"></input>
-      <div class="hamburger-button">
-        <label for="toggle" class="hamburger">
-          <div class="top-bun"></div>
-          <div class="bottom-bun"></div>
+      <div className="hamburger-button">
+        <label for="toggle" className="hamburger">
+          <div className="top-bun"></div>
+          <div className="bottom-bun"></div>
         </label>
       </div>
     </div>

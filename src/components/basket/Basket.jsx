@@ -19,11 +19,11 @@ const Basket = ({ basket }) => {
           </div>
           <div className="basket__count">
             <text>Количество услуг в корзине</text>
-            <num>{totalCount}</num>
+            <div className="solid">{totalCount}</div>
           </div>
           <div className="basket__sum">
             <text> Сумма заказа </text>
-            <num>{totalPrice}</num>
+            <div className="solid">{totalPrice}</div>
           </div>
         </div>
       ) : (
@@ -36,11 +36,11 @@ const Basket = ({ basket }) => {
           </div>
           <div className="basket__count">
             <text>Количество услуг в корзине</text>
-            <num>{totalCount}</num>
+            <div className="solid">{totalCount}</div>
           </div>
           <div className="basket__sum">
             <text> Сумма заказа </text>
-            <num>{totalPrice}</num>
+            <div className="solid">{totalPrice}</div>
           </div>
           {basket.map((basket) => (
             <BasketContent basket={basket} setCount={setCount} />
@@ -67,12 +67,12 @@ const BasketContent = ({ basket, setCount }) => {
       <div className="basket__descr">
         <div className="basket__product">{basket.name}</div>
         <div className="basket__product-count">
-          <num>{basket.price * basket.count}</num>
+          <div className="solid">{basket.price * basket.count}</div>
           <div className="basket__button-block">
             <button className="button_nobb" onClick={addIncriment}>
               +
             </button>
-            <num>{basket.count}</num>
+            <div className="solid">{basket.count}</div>
             <button className="button_nobb" onClick={addDecriment}>
               -
             </button>

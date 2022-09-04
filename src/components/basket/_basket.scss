@@ -58,12 +58,6 @@
         line-height: 22px;
     }
 
-    num {
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 22px;
-    }
-
     &__wrapper {
         padding: 0 85px 10px 85px;
     }
@@ -98,4 +92,10 @@
         display: flex;
         justify-content: center;
     }
+}
+
+.solid {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
 }

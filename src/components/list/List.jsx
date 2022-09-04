@@ -29,7 +29,7 @@ const MyServices = ({ handleSubmit, handleCall }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="list__basket">
-        <button className="button_nobb" type="submit">
+        <button className="button_nobb" type="submit" name='button-submit'>
           <img src={basket} alt="basket" onClick={handleCall} />
         </button>
       </div>
