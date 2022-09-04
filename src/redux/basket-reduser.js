@@ -140,7 +140,7 @@ const basketReducer = (state = initialState, action) => {
 }
 
 // экшен для добавления услуги в карзину
-export const newServicesAC = (id, count) => ({ type: ADD_DRY_SERVICES, id, count })
+export const newServicesAC = (id) => ({ type: ADD_DRY_SERVICES, id })
 export const newAqaServicesAC = (id) => ({ type: ADD_AQA_SERVICES, id })
 
 export default basketReducer;
