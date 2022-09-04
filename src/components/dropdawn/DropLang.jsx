@@ -4,6 +4,11 @@ import Divider from "../divider/Divider";
 const DropLang = () => {
   const [Lang, getLang] = useState("RU");
   const [isLangOpen, setLangOpen] = useState(false);
+  let handleLang = (event) => {
+    getLang(event.target.innerText);
+    setLangOpen(false);
+  };
+
   const ref = useRef();
   useOnClickOutside(ref, () => setLangOpen(false));
   function useOnClickOutside(ref, handler) {
@@ -30,15 +35,15 @@ const DropLang = () => {
           <label for="language">{Lang}</label>
           <ul className="submenu">
             <li>
-              <p onClick={() => getLang("RU")}>RU</p>
+              <p onClick={handleLang}>RU</p>
             </li>
             <Divider />
             <li>
-              <p onClick={() => getLang("ENG")}>ENG</p>
+              <p onClick={handleLang}>ENG</p>
             </li>
             <Divider />
             <li>
-              <p onClick={() => getLang("MOL")}>MOL</p>
+              <p onClick={handleLang}>MOL</p>
             </li>
           </ul>
         </div>
