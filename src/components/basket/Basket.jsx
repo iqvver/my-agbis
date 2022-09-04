@@ -4,12 +4,9 @@ import basketBtn from "../../assets/icons/basketBtn.png";
 
 const Basket = ({ basket }) => {
   const [activeBasket, setActive] = useState(false);
+  const [, setCount] = useState(basket.count);
   const totalCount = basket.reduce((a, b) => a + b.count, 0);
   const totalPrice = basket.reduce((a, b) => a + b.price * b.count, 0);
-
-  const myBasket = [...basket].map((basket) => (
-    <BasketContent basket={basket} />
-  ));
   return (
     <>
       {!activeBasket ? (
@@ -45,7 +42,9 @@ const Basket = ({ basket }) => {
             <text> Сумма заказа </text>
             <num>{totalPrice}</num>
           </div>
-          {myBasket}
+          {basket.map((basket) => (
+            <BasketContent basket={basket} setCount={setCount} />
+          ))}
           <button className="button button_center">Оформить заказ</button>
         </div>
       )}
@@ -53,8 +52,7 @@ const Basket = ({ basket }) => {
   );
 };
 
-const BasketContent = ({ basket }) => {
-  const [, setCount] = useState(basket.count);
+const BasketContent = ({ basket, setCount }) => {
   let addIncriment = () => {
     setCount((basket.count += 1));
   };
