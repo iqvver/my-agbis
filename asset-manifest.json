@@ -1,15 +1,15 @@
 {
-  "main.css": "/iqvver/my-agbis.git/static/css/main.ff581036.chunk.css",
-  "main.js": "/iqvver/my-agbis.git/static/js/main.57c8caa6.chunk.js",
-  "main.js.map": "/iqvver/my-agbis.git/static/js/main.57c8caa6.chunk.js.map",
-  "static/js/1.c41c1c1a.chunk.js": "/iqvver/my-agbis.git/static/js/1.c41c1c1a.chunk.js",
-  "static/js/1.c41c1c1a.chunk.js.map": "/iqvver/my-agbis.git/static/js/1.c41c1c1a.chunk.js.map",
-  "static/js/2.be78dd0b.chunk.js": "/iqvver/my-agbis.git/static/js/2.be78dd0b.chunk.js",
-  "static/js/2.be78dd0b.chunk.js.map": "/iqvver/my-agbis.git/static/js/2.be78dd0b.chunk.js.map",
-  "runtime~main.js": "/iqvver/my-agbis.git/static/js/runtime~main.3e19b561.js",
-  "runtime~main.js.map": "/iqvver/my-agbis.git/static/js/runtime~main.3e19b561.js.map",
-  "static/css/main.ff581036.chunk.css.map": "/iqvver/my-agbis.git/static/css/main.ff581036.chunk.css.map",
-  "index.html": "/iqvver/my-agbis.git/index.html",
-  "precache-manifest.55fae537ab288b64e5520dd87d902cef.js": "/iqvver/my-agbis.git/precache-manifest.55fae537ab288b64e5520dd87d902cef.js",
-  "service-worker.js": "/iqvver/my-agbis.git/service-worker.js"
+  "main.css": "/my-agbis/static/css/main.ff581036.chunk.css",
+  "main.js": "/my-agbis/static/js/main.56153653.chunk.js",
+  "main.js.map": "/my-agbis/static/js/main.56153653.chunk.js.map",
+  "static/js/1.c41c1c1a.chunk.js": "/my-agbis/static/js/1.c41c1c1a.chunk.js",
+  "static/js/1.c41c1c1a.chunk.js.map": "/my-agbis/static/js/1.c41c1c1a.chunk.js.map",
+  "static/js/2.be78dd0b.chunk.js": "/my-agbis/static/js/2.be78dd0b.chunk.js",
+  "static/js/2.be78dd0b.chunk.js.map": "/my-agbis/static/js/2.be78dd0b.chunk.js.map",
+  "runtime~main.js": "/my-agbis/static/js/runtime~main.c01ae050.js",
+  "runtime~main.js.map": "/my-agbis/static/js/runtime~main.c01ae050.js.map",
+  "static/css/main.ff581036.chunk.css.map": "/my-agbis/static/css/main.ff581036.chunk.css.map",
+  "index.html": "/my-agbis/index.html",
+  "precache-manifest.9772765bf2e578c1e00567f43ce4d7c4.js": "/my-agbis/precache-manifest.9772765bf2e578c1e00567f43ce4d7c4.js",
+  "service-worker.js": "/my-agbis/service-worker.js"
 }

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/iqvver/my-agbis.git/precache-manifest.55fae537ab288b64e5520dd87d902cef.js"
+  "/my-agbis/precache-manifest.9772765bf2e578c1e00567f43ce4d7c4.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/iqvver/my-agbis.git/index.html", {
+workbox.routing.registerNavigationRoute("/my-agbis/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
