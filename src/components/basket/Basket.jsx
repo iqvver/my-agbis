@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Divider from "../divider/Divider";
 import basketBtn from "../../assets/icons/basketBtn.png";
 

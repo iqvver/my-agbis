@@ -30,15 +30,15 @@ const DropLang = () => {
           <label for="language">{Lang}</label>
           <ul className="submenu">
             <li>
-              <a onClick={() => getLang("RU")}>RU</a>
+              <p onClick={() => getLang("RU")}>RU</p>
             </li>
             <Divider />
             <li>
-              <a onClick={() => getLang("ENG")}>ENG</a>
+              <p onClick={() => getLang("ENG")}>ENG</p>
             </li>
             <Divider />
             <li>
-              <a onClick={() => getLang("MOL")}>MOL</a>
+              <p onClick={() => getLang("MOL")}>MOL</p>
             </li>
           </ul>
         </div>

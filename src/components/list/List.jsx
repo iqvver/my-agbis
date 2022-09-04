@@ -12,7 +12,7 @@ const List = ({ services, addService, id }) => {
     <div className="list">
       <div className="list__title">{services.name}</div>
       <div className="list__content">
-        <div className="list__price">{services.price}</div>
+        <div className="list__price">{services.price} &#8381;</div>
         <div className="list__basket">
           <AddFormRedux onSubmit={addNewService} services={services} />
         </div>
@@ -29,7 +29,7 @@ const MyServices = ({ handleSubmit, handleCall }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="list__basket">
-        <button className="button_nobb" type="submit" name='button-submit'>
+        <button className="button_nobb" type="submit" name="button-submit">
           <img src={basket} alt="basket" onClick={handleCall} />
         </button>
       </div>

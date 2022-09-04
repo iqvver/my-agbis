@@ -6,6 +6,10 @@ ul#menu {
 .dropdown {
 
     label {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
         cursor: pointer;
     }
 
@@ -36,15 +40,6 @@ ul.submenu {
     z-index: 2;
 }
 
-ul.submenu li a {
-    display: block;
-    padding: 12px;
-    color: #FFFFFF;
-    text-decoration: none;
-    box-shadow: 0 -1px #016DA6 inset;
-
-}
-
-ul.submenu li a:hover {
+ul.submenu li p:hover {
     background: rgba(0, 0, 0, .3);
 }
