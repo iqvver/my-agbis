@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 import DrySuitContainer from "./serviceContent/serviceDry/DrySuitContainer";
 import AqaSuitContainer from "./serviceContent/serviseAqa/AqaSuitContainer";
 import ServiceInfo from "./serviceInfo/ServiceInfo";
@@ -8,6 +8,11 @@ import ServiceList from "./serviceList/ServiceList";
 const ServicePageContainer = () => {
   return (
     <>
+      <div className="navLink">
+        <NavLink to={"/dryouterwear"}>
+          <h1>Нажать</h1>
+        </NavLink>
+      </div>
       <ServiceInfo />
       <div className="service-wrapper">
         <div className="service-wrapper__list">
@@ -15,7 +20,7 @@ const ServicePageContainer = () => {
         </div>
         <div className="service-wrapper__content">
           <Routes>
-            <Route index path="/drysuit" element={<DrySuitContainer />} />
+            <Route exact path="/drysuit" element={<DrySuitContainer />} />
             <Route path="/dryouterwear" element={<DrySuitContainer />} />
             <Route path="/aqasuit" element={<AqaSuitContainer />} />
             <Route path="/aqaouterwear" element={<AqaSuitContainer />} />

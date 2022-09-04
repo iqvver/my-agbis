@@ -50,7 +50,15 @@
     justify-content: space-between;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 
+    &__hamburger {
+        width: 200px;
+    }
+
     &__logo {
         cursor: pointer;
+    }
+
+    &__search {
+        width: 200px;
     }
 }
