@@ -1,7 +1,7 @@
 {
   "name": "my-agbis",
   "version": "0.1.0",
-  "homepage": "https://github.com/iqvver/my-agbis.git",
+  "homepage": "https://iqvver.github.io/my-agbis/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
