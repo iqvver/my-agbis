@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/iqvver/DrycleaningApp.git/precache-manifest.a5bb8d7e44daae2468603066900d0bf0.js"
+  "/iqvver/DrycleaningApp.git/precache-manifest.66d16b3d63a8f692aa9caf139805bc34.js"
 );
 
 workbox.clientsClaim();
