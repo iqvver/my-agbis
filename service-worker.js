@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/iqvver/DrycleaningApp.git/precache-manifest.66d16b3d63a8f692aa9caf139805bc34.js"
+  "/iqvver/my-agbis.git/precache-manifest.12a9d998dfd2806866acf61fbc6044f5.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/iqvver/DrycleaningApp.git/index.html", {
+workbox.routing.registerNavigationRoute("/iqvver/my-agbis.git/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
