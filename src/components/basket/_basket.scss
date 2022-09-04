@@ -17,6 +17,14 @@
         top: 0;
     }
 
+    &__del {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 7px;
+        margin-right: -12px;
+        cursor: pointer;
+    }
+
     &__title {
         display: flex;
         margin: 28px 0 0 85px;

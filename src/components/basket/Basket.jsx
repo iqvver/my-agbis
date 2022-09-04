@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Divider from "../divider/Divider";
 import basketBtn from "../../assets/icons/basketBtn.png";
+import del from "../../assets/icons/del.png";
 
-const Basket = ({ basket }) => {
+const Basket = ({ basket, iDel, id }) => {
   const [activeBasket, setActive] = useState(false);
   const [, setCount] = useState(basket.count);
   const totalCount = basket.reduce((a, b) => a + b.count, 0);
   const totalPrice = basket.reduce((a, b) => a + b.price * b.count, 0);
+
   return (
     <>
       {!activeBasket ? (
@@ -23,7 +25,7 @@ const Basket = ({ basket }) => {
           </div>
           <div className="basket__sum">
             <text> Сумма заказа </text>
-            <div className="solid">{totalPrice}</div>
+            <div className="solid">{totalPrice} &#8381;</div>
           </div>
         </div>
       ) : (
@@ -40,10 +42,10 @@ const Basket = ({ basket }) => {
           </div>
           <div className="basket__sum">
             <text> Сумма заказа </text>
-            <div className="solid">{totalPrice}</div>
+            <div className="solid">{totalPrice} &#8381;</div>
           </div>
           {basket.map((basket) => (
-            <BasketContent basket={basket} setCount={setCount} />
+            <BasketContent key={basket.index} basket={basket} setCount={setCount} />
           ))}
           <button className="button button_center">Оформить заказ</button>
         </div>
@@ -52,7 +54,7 @@ const Basket = ({ basket }) => {
   );
 };
 
-const BasketContent = ({ basket, setCount }) => {
+const BasketContent = ({ basket, setCount, key }) => {
   let addIncriment = () => {
     setCount((basket.count += 1));
   };
@@ -64,10 +66,13 @@ const BasketContent = ({ basket, setCount }) => {
     <div className="basket__wrapper">
       <div className="basket__category">{basket.category}</div>
       <Divider />
+      <div className="basket__del">
+        <img src={del} alt="del" />
+      </div>
       <div className="basket__descr">
         <div className="basket__product">{basket.name}</div>
         <div className="basket__product-count">
-          <div className="solid">{basket.price * basket.count}</div>
+          <div className="solid">{basket.price * basket.count} &#8381;</div>
           <div className="basket__button-block">
             <button className="button_nobb" onClick={addIncriment}>
               +
