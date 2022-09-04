@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/iqvver/my-agbis.git/precache-manifest.12a9d998dfd2806866acf61fbc6044f5.js"
+  "/iqvver/my-agbis.git/precache-manifest.55fae537ab288b64e5520dd87d902cef.js"
 );
 
 workbox.clientsClaim();
