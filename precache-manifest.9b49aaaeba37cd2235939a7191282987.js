@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "31f779051ea5d7851654",
-    "url": "/my-agbis/static/css/main.73b94de8.chunk.css"
+    "revision": "e8f2803c024141383751",
+    "url": "/my-agbis/static/css/main.8220f15b.chunk.css"
   },
   {
-    "revision": "31f779051ea5d7851654",
-    "url": "/my-agbis/static/js/main.31f77905.chunk.js"
+    "revision": "e8f2803c024141383751",
+    "url": "/my-agbis/static/js/main.e8f2803c.chunk.js"
   },
   {
     "revision": "cb3033c0b56a10084252",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/my-agbis/static/js/runtime~main.1165cf10.js"
   },
   {
-    "revision": "1ad1b3093d0b6734aed9672ec81908ed",
+    "revision": "7711081d3cc800ea2710a22e7e60ce3e",
     "url": "/my-agbis/index.html"
   }
 ];
