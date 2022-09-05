@@ -22,5 +22,11 @@
         border: none;
         cursor: pointer;
         color: #0084CA;
+        transition: 1s;
+
+        :hover {
+            transform: scale(1.2);
+            /* Увеличиваем масштаб */
+        }
     }
 }
