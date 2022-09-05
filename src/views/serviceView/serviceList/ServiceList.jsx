@@ -33,11 +33,17 @@ const ServiceList = () => {
         <li className="list-menu">
           Химчистка
           <ul className="list-item">
-            <li>Аксесуары</li>
-            <NavLink to={"/dryouterwear"}>
+            <li className="link-wrapper">Аксесуары</li>
+            <NavLink
+              to={"/dryouterwear"}
+              className={({ isActive }) => (isActive ? "active-link" : " ")}
+            >
               <li>Верхняя одежда</li>
             </NavLink>
-            <NavLink to={"/drysuit"}>
+            <NavLink
+              to={"/drysuit"}
+              className={({ isActive }) => (isActive ? "active-link" : " ")}
+            >
               <li>Деловой костюм</li>
             </NavLink>
             <li>Джинса</li>
@@ -49,10 +55,16 @@ const ServiceList = () => {
           Аквачистка
           <ul className="list-item">
             <li>Аксесуары</li>
-            <NavLink to={"/aqaouterwear"}>
+            <NavLink
+              to={"/aqaouterwear"}
+              className={({ isActive }) => (isActive ? "active-link" : " ")}
+            >
               <li>Верхняя одежда</li>
             </NavLink>
-            <NavLink to={"/aqasuit"}>
+            <NavLink
+              to={"/aqasuit"}
+              className={({ isActive }) => (isActive ? "active-link" : " ")}
+            >
               <li>Деловой костюм</li>
             </NavLink>
             <li>Джинса</li>

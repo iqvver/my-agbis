@@ -11,6 +11,13 @@ const ServicePageContainer = () => {
       <div className="navLink">
         <NavLink to={"/dryouterwear"}>
           <h1>Нажать</h1>
+          <div>
+            Работают сслыки на: <br />
+            химчиска -- Верхняя одежда <br />
+            химчиска -- Деловой костюм <br />
+            аквачистка -- Верхняя одежда <br />
+            аквачистка -- Деловой костюм
+          </div>
         </NavLink>
       </div>
       <ServiceInfo />

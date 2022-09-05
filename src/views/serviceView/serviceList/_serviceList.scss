@@ -21,15 +21,9 @@
 
     li {
         text-decoration: none;
-        background-image: linear-gradient(currentColor, currentColor);
-        background-position: 0% 100%;
-        background-repeat: no-repeat;
-        background-size: 0% 2px;
-        transition: background-size .3s;
         cursor: pointer;
         list-style-type: none;
         margin: 12px 0;
-        width: 100%;
 
         :hover {
             background-size: 60% 2px;
@@ -50,4 +44,9 @@
 a {
     color: #000;
     text-decoration: none;
+}
+
+.active-link {
+    color: #0084CA;
+    font-weight: 700;
 }
