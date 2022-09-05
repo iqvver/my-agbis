@@ -3,11 +3,27 @@ import Divider from "../divider/Divider";
 import basketBtn from "../../assets/icons/basketBtn.png";
 import del from "../../assets/icons/del.png";
 
-const Basket = ({ basket, iDel, id }) => {
+const Basket = ({ basket }) => {
   const [activeBasket, setActive] = useState(false);
   const [, setCount] = useState(basket.count);
+  const [, setDel] = useState(basket);
+  const [seed, setSeed] = useState(1);
+  const reset = () => {
+    setSeed(Math.random());
+  };
   const totalCount = basket.reduce((a, b) => a + b.count, 0);
   const totalPrice = basket.reduce((a, b) => a + b.price * b.count, 0);
+
+  const myBasket = [...basket].map((basket) =>
+    basket.count !== 0 ? (
+      <BasketContent
+        basket={basket}
+        setCount={setCount}
+        setDel={setDel}
+        reset={reset}
+      />
+    ) : null
+  );
 
   return (
     <>
@@ -44,9 +60,7 @@ const Basket = ({ basket, iDel, id }) => {
             <text> Сумма заказа </text>
             <div className="solid">{totalPrice} &#8381;</div>
           </div>
-          {basket.map((basket) => (
-            <BasketContent key={basket.index} basket={basket} setCount={setCount} />
-          ))}
+          {myBasket}
           <button className="button button_center">Оформить заказ</button>
         </div>
       )}
@@ -54,7 +68,7 @@ const Basket = ({ basket, iDel, id }) => {
   );
 };
 
-const BasketContent = ({ basket, setCount, key }) => {
+const BasketContent = ({ basket, setCount, setDel, reset }) => {
   let addIncriment = () => {
     setCount((basket.count += 1));
   };
@@ -62,11 +76,22 @@ const BasketContent = ({ basket, setCount, key }) => {
     setCount((basket.count -= 1));
   };
 
+  let delLet = () => {
+    setDel(
+      (basket.category = null),
+      (basket.count = 0),
+      (basket.id = null),
+      (basket.name = null),
+      (basket.price = null),
+      (basket.totalSum = null)
+    );
+    reset();
+  };
   return (
     <div className="basket__wrapper">
       <div className="basket__category">{basket.category}</div>
       <Divider />
-      <div className="basket__del">
+      <div className="basket__del" onClick={delLet}>
         <img src={del} alt="del" />
       </div>
       <div className="basket__descr">
