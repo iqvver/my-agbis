@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import Divider from "../divider/Divider";
 import basketBtn from "../../assets/icons/basketBtn.png";
 import del from "../../assets/icons/del.png";
+import Count from "../count/Count";
 
 const Basket = ({ basket }) => {
   const [activeBasket, setActive] = useState(false);
   const [, setCount] = useState(basket.count);
-  const [, setDel] = useState(basket);
-  const [seed, setSeed] = useState(1);
+  const [qq, setDel] = useState(basket);
+  const [, setSeed] = useState(1);
   const reset = () => {
     setSeed(Math.random());
   };
@@ -69,13 +70,6 @@ const Basket = ({ basket }) => {
 };
 
 const BasketContent = ({ basket, setCount, setDel, reset }) => {
-  let addIncriment = () => {
-    setCount((basket.count += 1));
-  };
-  let addDecriment = () => {
-    setCount((basket.count -= 1));
-  };
-
   let delLet = () => {
     setDel(
       (basket.category = null),
@@ -98,15 +92,7 @@ const BasketContent = ({ basket, setCount, setDel, reset }) => {
         <div className="basket__product">{basket.name}</div>
         <div className="basket__product-count">
           <div className="solid">{basket.price * basket.count} &#8381;</div>
-          <div className="basket__button-block">
-            <button className="button_nobb" onClick={addIncriment}>
-              +
-            </button>
-            <div className="solid">{basket.count}</div>
-            <button className="button_nobb" onClick={addDecriment}>
-              -
-            </button>
-          </div>
+          <Count basket={basket} setCount={setCount} />
         </div>
       </div>
       <Divider />
