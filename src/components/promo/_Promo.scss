@@ -1,0 +1,29 @@
+.promo {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: url('../assets/images/bg.jpg') no-repeat 100%/cover;
+    background-blend-mode: multiply;
+    background-color: rgba($color: #1D252E, $alpha: .3);
+
+    &::after {
+        content: "Лучшие товары для Вас и вашего дома!";
+        position: absolute;
+        top: 200px;
+        left: 50px;
+        width: 250px;
+        font-size: 30px;
+        font-weight: 600;
+        color: #fff;
+    }
+    &::before {
+        content: "по низким ценам!";
+        position: absolute;
+        top: 305px;
+        left: 50px;
+        width: 150px;
+        font-size: 15px;
+        font-weight: 300;
+        color: #fff;
+    }
+}

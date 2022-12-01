@@ -3,14 +3,11 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const Search = ({ placeholder }) => {
   return (
-    <>
+    <div className="search">
       <Formik
         initialValues={{ search: "" }}
         validate={(values) => {
           const errors = {};
-          if (values.search.length > 10) {
-            errors.search = "Слишком длинный запрос";
-          }
           return errors;
         }}
       >
@@ -21,7 +18,7 @@ const Search = ({ placeholder }) => {
           </Form>
         )}
       </Formik>
-    </>
+    </div>
   );
 };
 

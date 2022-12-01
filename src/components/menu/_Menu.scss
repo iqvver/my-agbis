@@ -1,0 +1,15 @@
+.menu {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+        margin-left: 20px;
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+            scale: 1.1;
+        }
+    }
+}

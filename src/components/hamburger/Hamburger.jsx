@@ -2,15 +2,16 @@ import React from "react";
 
 const Hamburger = () => {
   return (
-    <div>
-      <input id="toggle" type="checkbox"></input>
+    <>
+      <input id="toggle" type="checkbox" />
       <div className="hamburger-button">
         <label for="toggle" className="hamburger">
-          <div className="top-bun"></div>
-          <div className="bottom-bun"></div>
+          <div className="top-bun" />
+          <div className="mid-bun" />
+          <div className="bottom-bun" />
         </label>
       </div>
-    </div>
+    </>
   );
 };
 

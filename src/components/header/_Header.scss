@@ -1,6 +1,6 @@
 .header {
-    height: 56px;
-    padding: 0 38px 0 52px;
+    height: 60px;
+    padding: 0 50px 0 50px;
     background-color: #1D252E;
     display: flex;
     align-items: center;
@@ -13,16 +13,12 @@
     &__phone {
         display: flex;
         align-items: center;
+        font-family: 'Roboto';
+        text-decoration: none !important;
+        font-weight: 700;
+        font-size: 16px;
+        color: #FFFFFF;
 
-
-        a {
-            font-family: 'Roboto';
-            text-decoration: none !important;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 26px;
-            color: #FFFFFF;
-        }
     }
 
     &__phone::after {
@@ -32,33 +28,21 @@
         height: 15px;
         margin-left: 10px;
     }
-
-    &__language {
-        display: block;
-        text-align: center;
-        width: 60px;
-        color: #FFFFFF;
-        cursor: pointer;
-    }
 }
 
 .sub-header {
-    height: 74px;
+    height: 80px;
     padding: 0 50px 0 50px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    background-color: rgba($color: #fff, $alpha: .1);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 
-    &__hamburger {
-        width: 200px;
-    }
-
     &__logo {
-        cursor: pointer;
+        width: 30%;
     }
 
     &__search {
-        width: 200px;
+        width: 70%;
     }
 }

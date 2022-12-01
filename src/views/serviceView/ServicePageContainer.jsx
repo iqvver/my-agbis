@@ -5,6 +5,7 @@ import AqaSuitContainer from "./serviceContent/serviseAqa/AqaSuitContainer";
 import ServiceInfo from "./serviceInfo/ServiceInfo";
 import ServiceList from "./serviceList/ServiceList";
 
+
 const ServicePageContainer = () => {
   return (
     <>
@@ -31,6 +32,7 @@ const ServicePageContainer = () => {
             <Route path="/dryouterwear" element={<DrySuitContainer />} />
             <Route path="/aqasuit" element={<AqaSuitContainer />} />
             <Route path="/aqaouterwear" element={<AqaSuitContainer />} />
+            
           </Routes>
         </div>
       </div>
