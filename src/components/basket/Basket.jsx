@@ -1,101 +1,73 @@
 import React, { useState } from "react";
-import Divider from "../divider/Divider";
 import basketBtn from "../../assets/icons/basketBtn.png";
 import del from "../../assets/icons/del.png";
-import Count from "../count/Count";
+import Divider from "../divider/Divider";
 
 const Basket = ({ basket }) => {
   const [activeBasket, setActive] = useState(false);
-  const [, setCount] = useState(basket.count);
-  const [qq, setDel] = useState(basket);
-  const [, setSeed] = useState(1);
-  const reset = () => {
-    setSeed(Math.random());
-  };
-  const totalCount = basket.reduce((a, b) => a + b.count, 0);
-  const totalPrice = basket.reduce((a, b) => a + b.price * b.count, 0);
 
-  const myBasket = [...basket].map((basket) =>
-    basket.count !== 0 ? (
-      <BasketContent
-        basket={basket}
-        setCount={setCount}
-        setDel={setDel}
-        reset={reset}
-      />
-    ) : null
-  );
-
+  const myBasket = [...basket].map((basket) => (
+    <BasketContent basket={basket} />
+  ));
   return (
     <>
       {!activeBasket ? (
         <div className="basket">
           <div className="basket__title">Корзина</div>
           <div className="basket__btn">
-            <button className="button_nobb" onClick={() => setActive(true)}>
+            <button className="button-nobb" onClick={() => setActive(true)}>
               <img src={basketBtn} alt="basketBtn" />
             </button>
           </div>
           <div className="basket__count">
-            <text>Количество услуг в корзине</text>
-            <div className="solid">{totalCount}</div>
+            <p>Количество товаров в корзине:</p>
+            <p className="solid">{basket.length} шт.</p>
           </div>
           <div className="basket__sum">
-            <text> Сумма заказа </text>
-            <div className="solid">{totalPrice} &#8381;</div>
+            <p>Сумма заказа:</p>
+            <p className="solid"> &#8381;</p>
           </div>
         </div>
       ) : (
         <div className="basket basket_active">
           <div className="basket__title">Корзина</div>
           <div className="basket__btn_active">
-            <button className="button_nobb" onClick={() => setActive(false)}>
+            <button className="button-nobb" onClick={() => setActive(false)}>
               <img src={basketBtn} alt="basketBtn" />
             </button>
           </div>
           <div className="basket__count">
-            <text>Количество услуг в корзине</text>
-            <div className="solid">{totalCount}</div>
+            <p>Количество товаров в корзине:</p>
+            <p className="solid">{basket.length} шт.</p>
           </div>
           <div className="basket__sum">
-            <text> Сумма заказа </text>
-            <div className="solid">{totalPrice} &#8381;</div>
+            <p>Сумма заказа:</p>
+            <p className="solid"> &#8381;</p>
           </div>
+          <Divider />
           {myBasket}
-          <button className="button button_center">Оформить заказ</button>
+          <button className="basket-btn">Оформить заказ</button>
         </div>
       )}
     </>
   );
 };
 
-const BasketContent = ({ basket, setCount, setDel, reset }) => {
-  let delLet = () => {
-    setDel(
-      (basket.category = null),
-      (basket.count = 0),
-      (basket.id = null),
-      (basket.name = null),
-      (basket.price = null),
-      (basket.totalSum = null)
-    );
-    reset();
-  };
+const BasketContent = ({ basket }) => {
   return (
-    <div className="basket__wrapper">
-      <div className="basket__category">{basket.category}</div>
-      <Divider />
-      <div className="basket__del" onClick={delLet}>
+    <div className="basket-wrapper">
+      <div className="basket-wrapper__del">
         <img src={del} alt="del" />
       </div>
-      <div className="basket__descr">
-        <div className="basket__product">{basket.name}</div>
-        <div className="basket__product-count">
-          <div className="solid">{basket.price * basket.count} &#8381;</div>
-          <Count basket={basket} setCount={setCount} />
+      <div className="basket-wrapper__descr">
+        <div className="basket-wrapper__product">
+          <div className="basket-wrapper__product-img"><img src={basket.img} alt="produkt-img" /></div>
+          <div className="basket-wrapper__product-name">{basket.name}</div>
+        </div>
+        <div className="basket-wrapper__product-count solid">
+          {basket.price} &#8381;
         </div>
       </div>
-      <Divider />
     </div>
   );
 };
