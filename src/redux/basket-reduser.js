@@ -97,7 +97,7 @@ const basketReducer = (state = initialState, action) => {
             })
             if (!state.isInArr) {
                 return { ...state, basket: [...state.basket, action.item] }
-            } return { ...state, ...state.basket[action.item.id].count++ }
+            }
         }
         case DEL_BASKET: {
             // удаление

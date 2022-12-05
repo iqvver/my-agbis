@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import { onAdd } from "../redux/basket-reduser";
 import { onDel } from "../redux/basket-reduser";
-import CatalogContainer from "../components/catalog/CatalogContainer";
+import CatalogContainer from "./catalogView/CatalogContainer";
 import BasketPageContainer from "./basketView/BasketPageContainer";
 
 const ViewsContainer = (props) => {

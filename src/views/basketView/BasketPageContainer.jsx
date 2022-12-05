@@ -1,5 +1,5 @@
 import React from "react";
-import Basket from "../../components/basket/Basket";
+import Basket from "../basketView/basket/Basket";
 
 const BasketPageContainer = ({ basket, onDel, setCount }) => {
   return (

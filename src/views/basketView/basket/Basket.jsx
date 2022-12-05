@@ -1,14 +1,19 @@
 import React, { useState } from "react";
-import basketBtn from "../../assets/icons/basketBtn.png";
-import del from "../../assets/icons/del.png";
-import Count from "../count/Count";
-import Divider from "../divider/Divider";
+import basketBtn from "../../../assets/icons/basketBtn.png";
+import del from "../../../assets/icons/del.png";
+import Count from "../../../components/count/Count";
+import Divider from "../../../components/divider/Divider";
 
 const Basket = ({ basket, onDel, setCount }) => {
   const [activeBasket, setActive] = useState(false);
 
   const myBasket = [...basket].map((basket) => (
-    <BasketContent basket={basket} onDel={onDel} id={basket.id} setCount={setCount} />
+    <BasketContent
+      basket={basket}
+      onDel={onDel}
+      id={basket.id}
+      setCount={setCount}
+    />
   ));
   return (
     <>
@@ -63,7 +68,12 @@ const Basket = ({ basket, onDel, setCount }) => {
 const BasketContent = ({ basket, onDel, id, setCount }) => {
   return (
     <div className="basket-wrapper">
-      <div className="basket-wrapper__del" onClick={() => {onDel(id)}}>
+      <div
+        className="basket-wrapper__del"
+        onClick={() => {
+          onDel(id);
+        }}
+      >
         <img src={del} alt="del" />
       </div>
       <div className="basket-wrapper__descr">
@@ -74,8 +84,7 @@ const BasketContent = ({ basket, onDel, id, setCount }) => {
           <div className="basket-wrapper__product-name">{basket.name}</div>
         </div>
         <div className="basket-wrapper__product-count solid">
-          <Count setCount={setCount} basket={basket} />
-           Х {basket.price} &#8381;
+          <Count setCount={setCount} basket={basket} />Х {basket.price} &#8381;
         </div>
       </div>
     </div>

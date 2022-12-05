@@ -1,5 +1,5 @@
 import React from "react";
-import Catalog from "./Catalog";
+import Catalog from "./catalog/Catalog";
 
 const CatalogContainer = ({catalogList, onAdd}) => {
   return (
