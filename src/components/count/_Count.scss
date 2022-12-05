@@ -1,0 +1,23 @@
+.count {
+    display: flex;
+    justify-content: space-between;
+    width: 50px;
+
+    &__plus {
+        width: 10px;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.5);
+        }
+    }
+
+    &__minus {
+        width: 10px;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.5);
+        }
+    }
+}

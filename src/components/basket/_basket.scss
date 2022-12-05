@@ -103,6 +103,12 @@
             }
         }
 
+        &-count {
+            display: flex;
+            justify-content: space-between;
+            width: 150px;
+        }
+
         &-name {
             letter-spacing: 2px;
         }

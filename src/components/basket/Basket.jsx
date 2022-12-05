@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import basketBtn from "../../assets/icons/basketBtn.png";
 import del from "../../assets/icons/del.png";
+import Count from "../count/Count";
 import Divider from "../divider/Divider";
 
-const Basket = ({ basket, onDel }) => {
+const Basket = ({ basket, onDel, setCount }) => {
   const [activeBasket, setActive] = useState(false);
 
   const myBasket = [...basket].map((basket) => (
-    <BasketContent basket={basket} onDel={onDel} id={basket.id} />
+    <BasketContent basket={basket} onDel={onDel} id={basket.id} setCount={setCount} />
   ));
   return (
     <>
@@ -59,7 +60,7 @@ const Basket = ({ basket, onDel }) => {
   );
 };
 
-const BasketContent = ({ basket, onDel, id }) => {
+const BasketContent = ({ basket, onDel, id, setCount }) => {
   return (
     <div className="basket-wrapper">
       <div className="basket-wrapper__del" onClick={() => {onDel(id)}}>
@@ -73,7 +74,8 @@ const BasketContent = ({ basket, onDel, id }) => {
           <div className="basket-wrapper__product-name">{basket.name}</div>
         </div>
         <div className="basket-wrapper__product-count solid">
-          {basket.count} Х {basket.price} &#8381;
+          <Count setCount={setCount} basket={basket} />
+           Х {basket.price} &#8381;
         </div>
       </div>
     </div>

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import plus from "../../assets/icons/plus.svg";
+import minus from "../../assets/icons/minus.svg";
 
 const Count = ({ basket, setCount }) => {
   let addIncriment = () => {
@@ -9,14 +11,14 @@ const Count = ({ basket, setCount }) => {
   };
 
   return (
-    <div className="basket__button-block">
-      <button className="button_nobb" onClick={addIncriment}>
-        +
-      </button>
+    <div className="count">
+      <div className="count__plus" onClick={addIncriment}>
+        <img src={plus} alt="plus" />
+      </div>
       <div className="solid">{basket.count}</div>
-      <button className="button_nobb" onClick={addDecriment}>
-        -
-      </button>
+      <div className="count__minus" onClick={addDecriment}>
+        <img src={minus} alt="minus" />
+      </div>
     </div>
   );
 };
