@@ -67,6 +67,10 @@
         display: flex;
         justify-content: space-between;
     }
+
+    &__no {
+        padding: 20px;
+    }
 }
 
 .basket-wrapper {

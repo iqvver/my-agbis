@@ -1,7 +1,7 @@
 import React from "react";
 import basket from "../../assets/icons/basket.png";
 
-const Card = ({ item, index, onAdd }) => {
+const Card = ({ item, onAdd }) => {
   return (
     <div className="card">
       <div className="card__img">

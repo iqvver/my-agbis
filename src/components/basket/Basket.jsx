@@ -3,11 +3,11 @@ import basketBtn from "../../assets/icons/basketBtn.png";
 import del from "../../assets/icons/del.png";
 import Divider from "../divider/Divider";
 
-const Basket = ({ basket }) => {
+const Basket = ({ basket, onDel }) => {
   const [activeBasket, setActive] = useState(false);
 
   const myBasket = [...basket].map((basket) => (
-    <BasketContent basket={basket} />
+    <BasketContent basket={basket} onDel={onDel} id={basket.id} />
   ));
   return (
     <>
@@ -45,31 +45,43 @@ const Basket = ({ basket }) => {
             <p className="solid"> &#8381;</p>
           </div>
           <Divider />
-          {myBasket}
-          <button className="basket-btn">Оформить заказ</button>
+          {basket.length === 0 ? (
+            <BasketNoContent />
+          ) : (
+            <>
+              {myBasket}
+              <button className="basket-btn">Оформить заказ</button>
+            </>
+          )}
         </div>
       )}
     </>
   );
 };
 
-const BasketContent = ({ basket }) => {
+const BasketContent = ({ basket, onDel, id }) => {
   return (
     <div className="basket-wrapper">
-      <div className="basket-wrapper__del">
+      <div className="basket-wrapper__del" onClick={() => {onDel(id)}}>
         <img src={del} alt="del" />
       </div>
       <div className="basket-wrapper__descr">
         <div className="basket-wrapper__product">
-          <div className="basket-wrapper__product-img"><img src={basket.img} alt="produkt-img" /></div>
+          <div className="basket-wrapper__product-img">
+            <img src={basket.img} alt="produkt-img" />
+          </div>
           <div className="basket-wrapper__product-name">{basket.name}</div>
         </div>
         <div className="basket-wrapper__product-count solid">
-          {basket.price} &#8381;
+          {basket.count} Х {basket.price} &#8381;
         </div>
       </div>
     </div>
   );
+};
+
+const BasketNoContent = () => {
+  return <div className="basket__no">Корзина пуста</div>;
 };
 
 export default Basket;
