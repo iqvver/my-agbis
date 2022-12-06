@@ -4,8 +4,10 @@ import del from "../../../assets/icons/del.png";
 import Count from "../../../components/count/Count";
 import Divider from "../../../components/divider/Divider";
 
-const Basket = ({ basket, onDel, setCount }) => {
+const Basket = ({ basket, onDel, setCount, editCount }) => {
   const [activeBasket, setActive] = useState(false);
+  const totalCount = basket.reduce((a, b) => a + b.count, 0);
+  const totalPrice = basket.reduce((a, b) => a + b.totalSum, 0);
 
   const myBasket = [...basket].map((basket) => (
     <BasketContent
@@ -13,6 +15,7 @@ const Basket = ({ basket, onDel, setCount }) => {
       onDel={onDel}
       id={basket.id}
       setCount={setCount}
+      editCount={editCount}
     />
   ));
   return (
@@ -27,11 +30,10 @@ const Basket = ({ basket, onDel, setCount }) => {
           </div>
           <div className="basket__count">
             <p>Количество товаров в корзине:</p>
-            <p className="solid">{basket.length} шт.</p>
+            <p className="solid">{totalCount} шт.</p>
           </div>
           <div className="basket__sum">
-            <p>Сумма заказа:</p>
-            <p className="solid"> &#8381;</p>
+            Сумма заказа:<p className="solid">{totalPrice} &#8381;</p>
           </div>
         </div>
       ) : (
@@ -44,11 +46,11 @@ const Basket = ({ basket, onDel, setCount }) => {
           </div>
           <div className="basket__count">
             <p>Количество товаров в корзине:</p>
-            <p className="solid">{basket.length} шт.</p>
+            <p className="solid">{totalCount} шт.</p>
           </div>
           <div className="basket__sum">
             <p>Сумма заказа:</p>
-            <p className="solid"> &#8381;</p>
+            <p className="solid"> {totalPrice} &#8381;</p>
           </div>
           <Divider />
           {basket.length === 0 ? (
@@ -56,6 +58,7 @@ const Basket = ({ basket, onDel, setCount }) => {
           ) : (
             <>
               {myBasket}
+              <Divider />
               <button className="basket-btn">Оформить заказ</button>
             </>
           )}
@@ -65,7 +68,7 @@ const Basket = ({ basket, onDel, setCount }) => {
   );
 };
 
-const BasketContent = ({ basket, onDel, id, setCount }) => {
+const BasketContent = ({ basket, onDel, id, setCount, editCount }) => {
   return (
     <div className="basket-wrapper">
       <div
@@ -83,8 +86,20 @@ const BasketContent = ({ basket, onDel, id, setCount }) => {
           </div>
           <div className="basket-wrapper__product-name">{basket.name}</div>
         </div>
-        <div className="basket-wrapper__product-count solid">
-          <Count setCount={setCount} basket={basket} />Х {basket.price} &#8381;
+        <div className="basket-wrapper__product-price">
+          <div className="basket-wrapper__product-count solid">
+            <Count
+              setCount={setCount}
+              basket={basket}
+              editCount={editCount}
+              id={id}
+            />{" "}
+            Х {basket.price}
+            &#8381;
+          </div>
+          <div className="basket-wrapper__product-total">
+            Общаяя сумма: {basket.totalSum} &#8381;
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 const ADD_BASKET = 'ADD_BASKET'; // переменная добавления в карзину услуги
 const DEL_BASKET = 'DEL_BASKET'; // переменная добавления в карзину услуги
+const EDIT_BASKET = 'EDIT_BASKET'; // переменная добавления в карзину услуги
 
 // иноциализация переменных
 let initialState = {
@@ -12,7 +13,8 @@ let initialState = {
             descr: 'с ящиками',
             category: 'Шкафы',
             count: 1,
-            price: '14000'
+            price: '14000',
+            totalSum: 14000,
         },
     ],
 
@@ -24,7 +26,8 @@ let initialState = {
             descr: 'С ящиками',
             category: 'Шкафы',
             count: 1,
-            price: '14000'
+            price: '14000',
+            totalSum: 14000,
         },
         {
             id: 1,
@@ -33,7 +36,8 @@ let initialState = {
             descr: 'Раскладной',
             category: 'Диваны',
             count: 1,
-            price: '20400'
+            price: '20400',
+            totalSum: 20400,
         },
         {
             id: 2,
@@ -42,7 +46,8 @@ let initialState = {
             descr: 'Коллекция от Helvetia',
             category: 'Комоды',
             count: 1,
-            price: '4000'
+            price: '4000',
+            totalSum: 4000
         },
         {
             id: 3,
@@ -51,7 +56,8 @@ let initialState = {
             descr: 'Раскладной LIZARD',
             category: 'Столы',
             count: 1,
-            price: '38400'
+            price: '38400',
+            totalSum: 38400
         },
         {
             id: 4,
@@ -60,7 +66,8 @@ let initialState = {
             descr: 'Раскладной',
             category: 'Диваны',
             count: 1,
-            price: '40000'
+            price: '40000',
+            totalSum: 40000,
         },
         {
             id: 5,
@@ -69,7 +76,8 @@ let initialState = {
             descr: 'Основание ЛДСП',
             category: 'Комплект',
             count: 1,
-            price: '111100'
+            price: '111100',
+            pritotalSumce: 111100,
         },
         {
             id: 6,
@@ -78,7 +86,8 @@ let initialState = {
             descr: 'Двухдверный шкаф-купе',
             category: 'Шкафы',
             count: 1,
-            price: '45000'
+            price: '45000',
+            totalSum: 45000,
         },
     ],
 
@@ -88,7 +97,24 @@ let initialState = {
 // редьюсер добавления
 const basketReducer = (state = initialState, action) => {
     switch (action.type) {
+
+        case EDIT_BASKET: {
+            state.basket.forEach(el => {
+                if(el.id === action.id) {
+                    return { ...state.basket, ...el.totalSum = el.price * action.count }
+                }
+            })
+            return { ...state, ...state.basket }
+        }
+
         case ADD_BASKET: {
+            let iId = action.item.id;
+            let iCategory = action.item.category;
+            let iImg = action.item.img;
+            let iName = action.item.name;
+            let iPrice = action.item.price;
+            let iCount = action.item.count;
+            let iTotalSum = iPrice * iCount;
             // добавление
             state.basket.find(el => {
                 if (el.id === action.item.id) {
@@ -96,7 +122,17 @@ const basketReducer = (state = initialState, action) => {
                 } return state.isInArr = false;
             })
             if (!state.isInArr) {
-                return { ...state, basket: [...state.basket, action.item] }
+                return {
+                    ...state, basket: [...state.basket, {
+                        id: iId,
+                        category: iCategory,
+                        name: iName,
+                        img: iImg,
+                        price: iPrice,
+                        count: iCount,
+                        totalSum: iTotalSum,
+                    }]
+                }
             }
         }
         case DEL_BASKET: {
@@ -111,6 +147,7 @@ const basketReducer = (state = initialState, action) => {
 
 // экшен для добавления услуги в карзину
 const onAddAC = (item) => ({ type: ADD_BASKET, item });
+const qqAC = (count, id) => ({ type: EDIT_BASKET, count, id });
 const onDelAC = (id) => ({ type: DEL_BASKET, id });
 
 export const onAdd = (item) => {
@@ -123,6 +160,11 @@ export const onAdd = (item) => {
 export const onDel = (id) => {
     return (dispatch) => {
         dispatch(onDelAC(id));
+    }
+}
+export const qq = (count, id) => {
+    return (dispatch) => {
+        dispatch(qqAC(count, id));
     }
 }
 

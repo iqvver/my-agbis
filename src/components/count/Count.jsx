@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import plus from "../../assets/icons/plus.svg";
 import minus from "../../assets/icons/minus.svg";
 
-const Count = ({ basket, setCount }) => {
+const Count = ({ basket, editCount, id, setCount }) => {
+  
   let addIncriment = () => {
     setCount((basket.count += 1));
+    editCount(basket.count, id);
   };
   let addDecriment = () => {
     setCount((basket.count -= 1));
+    editCount(basket.count, id);
   };
 
   return (
