@@ -99,6 +99,7 @@ const basketReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case EDIT_BASKET: {
+            //редактирование
             if (action.count < 0) {
                 action.count = 0;
             };
@@ -111,6 +112,7 @@ const basketReducer = (state = initialState, action) => {
         }
 
         case ADD_BASKET: {
+            // добавление
             let iId = action.item.id;
             let iCategory = action.item.category;
             let iImg = action.item.img;
@@ -118,7 +120,6 @@ const basketReducer = (state = initialState, action) => {
             let iPrice = action.item.price;
             let iCount = action.item.count;
             let iTotalSum = iPrice * iCount;
-            // добавление
             state.basket.find(el => {
                 if (el.id === action.item.id) {
                     return state.isInArr = true;
@@ -138,6 +139,7 @@ const basketReducer = (state = initialState, action) => {
                 }
             }
         }
+            break;
         case DEL_BASKET: {
             // удаление
             return { ...state, basket: [...state.basket.filter(el => el.id !== action.id)] }
@@ -148,7 +150,7 @@ const basketReducer = (state = initialState, action) => {
     }
 }
 
-// экшен для добавления услуги в карзину
+// экшен для добавления в карзину
 const onAddAC = (item) => ({ type: ADD_BASKET, item });
 const qqAC = (count, id) => ({ type: EDIT_BASKET, count, id });
 const onDelAC = (id) => ({ type: DEL_BASKET, id });

@@ -3,9 +3,9 @@ import React from "react";
 const Menu = () => {
   return (
     <div className="menu">
-      <a href="#">Про нас</a>
-      <a href="#">Контакты</a>
-      <a href="#">Кабинет</a>
+      <div className="menu__item">Про нас</div>
+      <div className="menu__item">Контакты</div>
+      <div className="menu__item">Кабинет</div>
     </div>
   );
 };
