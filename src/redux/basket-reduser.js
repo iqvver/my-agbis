@@ -99,9 +99,12 @@ const basketReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case EDIT_BASKET: {
+            if (action.count < 0) {
+                action.count = 0;
+            };
             state.basket.forEach(el => {
-                if(el.id === action.id) {
-                    return { ...state.basket, ...el.totalSum = el.price * action.count }
+                if (el.id === action.id) {
+                    return { ...state.basket, ...el.count = action.count, ...el.totalSum = el.price * action.count }
                 }
             })
             return { ...state, ...state.basket }
@@ -162,7 +165,7 @@ export const onDel = (id) => {
         dispatch(onDelAC(id));
     }
 }
-export const qq = (count, id) => {
+export const editCount = (count, id) => {
     return (dispatch) => {
         dispatch(qqAC(count, id));
     }

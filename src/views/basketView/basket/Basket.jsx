@@ -8,6 +8,9 @@ const Basket = ({ basket, onDel, setCount, editCount }) => {
   const [activeBasket, setActive] = useState(false);
   const totalCount = basket.reduce((a, b) => a + b.count, 0);
   const totalPrice = basket.reduce((a, b) => a + b.totalSum, 0);
+  const sendMes = () => {
+    alert("Отправлено")
+  }
 
   const myBasket = [...basket].map((basket) => (
     <BasketContent
@@ -59,7 +62,7 @@ const Basket = ({ basket, onDel, setCount, editCount }) => {
             <>
               {myBasket}
               <Divider />
-              <button className="basket-btn">Оформить заказ</button>
+              <button className="basket-btn"  onClick={sendMes}>Оформить заказ</button>
             </>
           )}
         </div>

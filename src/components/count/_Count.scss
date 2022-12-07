@@ -1,17 +1,12 @@
 .count {
+    padding: 0 3px 0 3px;
     display: flex;
     justify-content: space-between;
-    width: 50px;
+    width: 55px;
+    border: 1px solid #0084CA;
+    border-radius: 4px;
 
-    &__plus {
-        width: 10px;
-        cursor: pointer;
-
-        &:hover {
-            transform: scale(1.5);
-        }
-    }
-
+    &__plus,
     &__minus {
         width: 10px;
         cursor: pointer;
@@ -19,5 +14,6 @@
         &:hover {
             transform: scale(1.5);
         }
+
     }
 }

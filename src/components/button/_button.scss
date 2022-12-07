@@ -21,12 +21,17 @@
 .basket-btn {
     background-color: #0084CA;
     border: none;
-    width: 40%;
-    height: 50px;
+    min-width: 40%;
+    min-height: 50px;
     border-radius: 4px;
     margin: 0 auto;
     color: #FFFFFF;
     font-size: 15px;
+
+    &:hover  {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
 }
 
 .button-nobb {
